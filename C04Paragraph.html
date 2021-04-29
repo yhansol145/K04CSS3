@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+    수평방향에서의 정렬
+        블럭엘리먼트 : 컨텐츠의 양에 상관없이 하나의 블럭을 차지하므로
+        우측의 공간이 충분하여 컨텐츠는 우측정렬된다.
+        인라인엘리먼트 : 컨텐츠의 크기만큼만 영역을 차지하므로 컨텐츠가
+        움직일 공간이 없어 정렬되지 않는다. 만약 정렬해야 한다면 
+        부모엘리먼트에서 text-align을 설정해야 한다.
+    -->
+    <h2>문단관련 CSS 속성들</h2>
+
+    <div style="border: 1px blue dotted; width: 400px;">
+        <h2>컨텐츠 수평방향 정렬</h2>
+        <div style="border: 1px solid red; text-align: right;">
+            블럭엘리먼트
+        </div>
+        <!-- span을 정렬하기 위해서는 아래처럼 부모 div태그가 필요하다. -->
+        <!-- <div style="text-align: right;"> -->
+        <span style="border: 1px solid blue; text-align: right;">
+            인라인엘리먼트
+        </span>
+    </div>
+
+    <!-- 
+    line-height : 줄간격. 즉 라인사이의 간격을 띄우는데 블럭과 인라인은 조금 다르게 적용된다.
+        블럭 : 컨텐츠의 영역 중 세로 영역이 늘어나서 마치 줄간격이
+            생긴것처럼 보여지게 된다.
+        인라인 : 컨텐츠의 영역은 크기의 변화가 없지만, 지정된 사이즈
+            만큼 줄간격이 생겨 사이가 벌어진다.
+    -->
+    <h3>줄사이의 간격</h3>
+    <h4 style="line-height: 2em; border: 1px solid blue;">
+        블럭엘리먼트1에 줄간격 적용
+    </h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트2</h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트3</h4>
+
+    <div class="inline">
+        <span style="line-height: 5em; border: 1px solid black;">
+            인라인엘리먼트1</span><br /> 
+        <span style="border: 1px solid black;">인라인엘리먼트2</span>
+        <br />
+        <span style="border: 1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+    <h3>수직상태에서의 가운데 정렬</h3>
+
+    <!-- div박스의 height와 line-height의 값을 동일하게 지정하면
+    세로상태에서 가운데 정렬이 된다. -->
+    <h4>블럭엘리먼트 사용시 방법1</h4>
+    <div style="border: 1px solid black; height: 200px; width: 200px;
+        line-height: 200px;">
+        나는 텍스트1
+    </div>
+
+    <!-- div박스 내부의 padding을 지정해서 텍스트를 아래쪽으로
+    밀어준다. 이경우 세로영역이 늘어나므로 사이즈는 별도로
+    조절해야 한다. -->
+    <h4>블럭엘리먼트 사용시 방법2</h4>
+    <div style="border: 1px solid red; height: 100px; width: 200px;
+        padding-top: 100px;">
+        나는 텍스트2    
+    </div>
+
+    <!-- 인라인 엘리먼트인 경우 세로상태에서의 가운데 정렬은
+    vertical-align을 사용한다. -->
+    <h4>인라인엘리먼트 사용시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height: 100px; vertical-align: top;">인라인엘리먼트
+            세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: middle;">인라인엘리먼트
+            세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align:bottom;">인라인엘리먼트
+            세로정렬</td>
+        </tr>
+    </table>
+
+    <!-- 각기 다른 길이의 단어를 사용함으로써 발생되는 우측의 불규칙적인
+    여백을 깔끔하게 정리해주는 역할을 한다. -->
+    <h2>배분정렬</h2>
+    <p style="border: 1px solid blue; text-align: justify;">
+        토트넘은 26일(이하 한국시간) 영국 런던에 위치한 웸블리 스타디움에서 열린 2020-21시즌 카라바오컵 결승전에서 맨체스터 시티에 0-1로 패배했다. 13년 동안 이어진 무관의 고리를 끊으려고 했던 토트넘이지만 이번에도 실패로 돌아갔다.
+
+    손흥민은 카라바오컵 결승전을 앞두고 "아직은 자랑스러워할 순간이 아니다. 결승전에서 패배한다면 선수들도, 팬들도 속상할 것이다. 모두가 우승을 원한다. 특히 팬들을 위해 트로피를 가져오고 싶다"며 우승을 향한 열망을 드러냈다.
+
+    하지만 손흥민의 간절함은 이뤄지지 못했다. 종료 휘슬이 울리자 토트넘 선수들과 손흥민은 크게 좌절한 모습이었다. 끝내 손흥민은 아쉬움의 눈물을 왈칵 쏟아냈다. 손흥민이 눈물을 보이자 맨시티 선수들이 달려와 위로를 건넸다. 일카이 귄도안과 필 포든은 손흥민의 등을 토닥이며 달래줬다. 손흥민과 독일 분데스리가 시절부터 연을 쌓아온 케빈 더 브라위너도 위로를 잊지 않았다.
+
+    토트넘 선수 중에는 가레스 베일이 가장 먼저 다가왔다. 베일은 눈물을 흘리는 손흥민의 등을 토닥여주며 아픔을 함께했다. 아쉬운 건 베일도 마찬가지였다. 그는 29일 개인 SNS를 통해 "패배는 받아들이기 어려웠다. 우리는 이번 시즌 마지막 경기를 위해 다시 뭉칠 것이다. 팬들의 지지에 감사하다"고 밝혔다.
+
+    무관의 역사를 없애버리는 데에는 실패했지만 그래도 토트넘은 4위권에 든다면 유종의 미라도 거둘 수 있다. 현재 토트넘은 승점 53으로 7위를 달리고 있다. 승점 58로 4위를 달리고 있는 첼시와의 격차는 5점. 남은 경기가 5경기라는 걸 감안하면 쉽지 않은 게 사실이나 아직 포기할 단계는 아니다. 앞으로 토트넘은 셰필드 유나이티드, 리즈 유나이티드, 울버햄튼, 아스톤 빌라, 레스터 시티와의 대결을 앞두고 있다.
+
+    </p>
+
+    <h2>들여쓰기</h2>
+    <div style="border: 1px solid red; text-indent: 1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    <div style="border: 1px solid blue; padding-left: 10px;">
+        <span style="text-indent: 1em;">
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+    </div>
+
+</body>
+</html>
