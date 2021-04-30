@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration01.html</title>
     <style>
-        table {
-            border: 1;
-            width: 500px;
-            height: 500px;
-            border-spacing: 5px;
+        * {
+            background-color: white;
+            padding: 2px;
+            margin: 7px;
         }
 
-        tr td:first-child {
-            background-color: lightgray;
+        table {
+            padding: 20px;
+            width: 700px;
+            height: 700px;
+        }
+
+        td {
+            border: 1px solid lightgray;
         }
     </style>
 </head>
@@ -24,59 +29,121 @@
     <table>
         <tr>
             <td>아이디</td>
-            <td>중복확인 +4~15자, 첫 영문자, 영문자와 숫자 조합</td>
+            <td>
+                <input type="text" size="16">
+                <button type="submit" style="background-color: black; color: white;">중복확인</button>
+                <span>* 4~15자, 첫 영문자, 영문자와 숫자 조합</span>
+            </td>
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td>password</td>
+            <td><input type="password" size="14"></td>
         </tr>
         <tr>
             <td>비밀번호 확인</td>
-            <td>(확인을 위해 다시 입력해 주세요.)</td>
+            <td>
+                <input type="password" size="14">
+                <span>(확인을 위해 다시 입력해 주세요.)</span>
+            </td>
         </tr>
         <tr>
             <td>이름</td>
-            <td>name</td>
+            <td><input type="text" size="16"></td>
         </tr>
         <tr>
             <td>생년월일</td>
-            <td>체크항목 들어가야함</td>
+            <td>
+                <input type="radio" name="gender">남자
+                <input type="radio" name="gender">여자
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" size="8">년
+                <input type="text" size="4">월
+                <input type="text" size="4">일
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span>(예, 2000년 01월 31일)</span>
+            </td>
         </tr>
         <tr>
             <td rowspan="2">이메일</td>
-            <td>yhansol145@gmail.com 수신허용/수신불가</td>
+            <td>
+                <input type="text" size="14">@
+                <input type="text" size="14">
+                <select name="">
+                    <option value="gmail">gmail.com</option>
+                    <option value="naver">naver.com</option>
+                    <option value="nate">nate.com</option>
+                    <input type="radio" name="reception">수신허용
+                    <input type="radio" name="reception">수신불가
+                </select>
+            </td>
         </tr>
         <tr>
             <!-- <td>a</td> -->
-            <td>안내메세지 출력해야함</td>
+            <td style="color: gray; font-size: 14px;">※ hanmail.net은 메일 수신이 어려울 수 있으니 가급적 다른 메일을 이용하시기 바랍니다.</td>
         </tr>
         <tr>
             <td rowspan="3">주소</td>
-            <td>주소찾기 (우편번호)</td>
+            <td>
+                <button type="submit" style="background-color: black; color: white;">주소찾기</button>
+                <input type="text" size="10px"></input>
+                <span>(우편번호)</span>
+            </td>
         </tr>
         <tr>
             <!-- <td>a</td> -->
-            <td>입력칸 들어가야함</td>
+            <td>
+                <input type="text" size="80px">
+            </td>
+
         </tr>
         <tr>
             <!-- <td>a</td> -->
-            <td>입력칸 들어가야함 / +나머지 주소</td>
+            <td>
+                <input type="text" size="63px">
+                &nbsp;&nbsp;
+                <span>* 나머지 주소</span>
+            </td>
         </tr>
         <tr>
             <td>전화번호</td>
-            <td>입력-입력-입력</td>
+            <td>
+                <input type="text" size="4">-
+                <input type="text" size="6">-
+                <input type="text" size="6">
+            </td>
         </tr>
         <tr>
             <td>휴대전화</td>
-            <td>입력-입력-입력 SMS수신허용 / SMS수신불가</td>
+            <td>
+                <input type="text" size="4">-
+                <input type="text" size="6">-
+                <input type="text" size="6">
+                &nbsp;&nbsp;
+                <input type="radio" name="sms">SMS 수신허용
+                <input type="radio" name="sms">SMS 수신불가
+            </td>
         </tr>
         <tr>
             <td>관심분야</td>
-            <td>선택 들어가야 함</td>
+            <td>
+                <select name="">
+                    <option value="main">:: 관심분야 선택 ::</option>
+                    <option value="1st">자바</option>
+                    <option value="2nd">파이썬</option>
+                    <option value="3rd">C++</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>가입경로</td>
-            <td>선택 들어가야 함</td>
+            <td>
+                <select name="">
+                    <option value="main">:: 가입경로 선택 ::</option>
+                    <option value="1st">광고</option>
+                    <option value="2nd">지인추천</option>
+                    <option value="3rd">검색</option>
+                </select>
+            </td>
         </tr>
     </table>
 </body>
