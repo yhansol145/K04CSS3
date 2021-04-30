@@ -93,13 +93,106 @@
 
     <h2>position 속성</h2>
 
+    <!-- 부모 엘리먼트 위치를 기준으로 좌측, 상단에서 지정한
+    픽셀만큼 간격이 벌어진다. -->
     <fieldset>
         <legend>position:relative</legend>
-
         <div class="div1" style="position:relative; left:30px; top:10px;
                 width: 100px; height: 100px;">
             relative
         </div>
+    </fieldset>
+
+
+    <!--  
+        부모 엘리먼트를 기준으로 간격이 떨어지는 것은 동일하나
+        기준 위치가 relative와는 조금 다르다. 또한 부모 엘리먼트가
+        position속성을 가지지 않으면 기준위치는 웹브라우저가 된다.
+    -->
+    <fieldset style="position: absolute;">
+        <legend>position:absolute</legend>
+        <div class="div2" style="position:absolute; left:0px; top:0px;
+                    width: 100px; height: 100px;">
+            relative
+        </div>
+    </fieldset>
+
+
+    <p style="height: 200px;"></p>
+
+    <!-- static일때는 위치값을 임의로 조정할 수 없다. 아래의 경우
+    모두 고정된 위치에 출력된다. -->
+    <fieldset style="position: static;">
+        <legend>position:static</legend>
+
+        <div class="div1" style="position: static; left: 0px; top: 0px;
+                width: 50px; height: 50px;">Box1(0,0)</div>
+        <div class="div2" style="position: static; left: 100px; top: 100px;
+                width: 50px; height: 50px;">Box2(100,100)</div>
+        <div class="div3" style="position: static; left: 100px; top: 100px;
+                width: 50px; height: 50px;">Box3(100,100)</div>
+
+    </fieldset>
+
+    <!-- 앞서 배치된 엘리먼트의 위치의 상태위치를 지정하게 되어
+    box2의 경우 box1 아래쪽에 배치된다. 그리고 엘리먼트끼리 겹쳐지는
+    경우는 발생하지 않는다. -->
+    <fieldset style="position: relative;">
+        <legend>position:relative</legend>
+
+        <div class="div1" style="position: relative; left: 0px; top: 0px;
+                width: 50px; height: 50px;">Box1(0,0)</div>
+        <div class="div2" style="position: relative; left: 50px; top: 0px;
+                width: 50px; height: 50px;">Box2(50,0)</div>
+        <div class="div3" style="position: relative; left: 100px; top: 0px;
+                width: 50px; height: 50px;">Box3(100,0)</div>
+
+    </fieldset>
+
+    <!--  
+        엘리먼트가 absolute 인 경우 부모엘리먼트의
+        position속성이 있는 경우
+            -> 부모 엘리먼트가 기준점이 된다.
+        position속성이 없는 경우
+            -> 웹브라우저의 좌측상단이 기준점이 된다.
+            따라서 원하는 어떤 위치에도 엘리먼트를 
+            floatin 시킬 수 있다.
+    -->
+    <fieldset style="position: relative;">
+        <!-- position속성을 지우면 웹브라우저의 최상단으로 이동한다. -->
+        <legend>position:absolute</legend>
+
+        <div class="div1" style="position: absolute; left: 0px; top: 0px;
+                width: 50px; height: 50px;">Box1(0,0)</div>
+        <div class="div2" style="position: absolute; left: 25px; top: 25px;
+                width: 50px; height: 50px;">Box2(25,25)</div>
+        <div class="div3" style="position: absolute; left: 50px; top: 50px;
+                width: 50px; height: 50px;">Box3(50,50)</div>
+
+    </fieldset>
+
+    <p style="height: 100px;"></p>
+
+    <!--  
+        z-index : 레이어의 우선순위를 지정할때 사용한다.
+            1~9999까지를 사용할 수 있고 숫자가 클수록 높은
+            우선순위를 부여받게 된다. 단, 동일한 우선순위를
+            부여하면 나중에 배치된 엘리먼트가 높은 우선순위를
+            가지게 된다.
+    -->
+    <fieldset style="position: relative;">
+        <legend>position:absolute</legend>
+
+        <div class="div1" style="position: absolute; left: 0px; top: 0px;
+                width: 50px; height: 50px;
+                z-index: 9999;">Box1(0,0)</div>
+        <div class="div2" style="position: absolute; left: 25px; top: 25px;
+                width: 50px; height: 50px;
+                z-index: 500;">Box2(25,25)</div>
+        <div class="div3" style="position: absolute; left: 50px; top: 50px;
+                width: 50px; height: 50px;
+                z-index: 1;">Box3(50,50)</div>
+
     </fieldset>
 
 </body>
